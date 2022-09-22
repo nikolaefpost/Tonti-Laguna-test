@@ -263,18 +263,6 @@ main{
       margin-top: 20px;
       flex-direction: column;
       gap: 20px;
-
-      & p{
-        @include fonts(500, 18px, 27px, $second_font);
-      }
-
-      & div{
-        border-radius: 25px;
-        background: rgba(255, 255, 255, 0.5);
-        @include display-flex;
-        gap: 6px;
-
-      }
     }
 
     & .card_block{
@@ -306,51 +294,6 @@ main{
         flex-direction: column;
         gap: 25px;
 
-        & .content{
-
-          & .price{
-
-            & span:first-child{
-              @include fonts(700, 36px, 46px, #FFFFFF);
-            }
-
-            & span{
-              @include fonts(500, 17px, 26px, #FFFFFF);
-            }
-          }
-
-          & h2{
-            margin-top: 20px;
-            @include fonts(500, 28px, 42px, #FFFFFF);
-          }
-
-          & p{
-            @include fonts(500, 15px, 22px, #FFFFFF);
-          }
-
-          & ul{
-
-            & li:first-child{
-              margin-top: 14px;
-            }
-
-            & li{
-              list-style: none;
-              padding-left: 30px;
-              position: relative;
-              margin-top: 8px;
-              @include fonts(500, 15px, 22px, #FFFFFF);
-
-              &:after{
-                content: url("../assets/check_dark.svg");
-                position: absolute;
-                left: 0;
-              }
-            }
-          }
-
-
-        }
 
         & .label{
           align-self: center;
@@ -358,10 +301,6 @@ main{
           top: 0;
           right: 0;
           padding: 6px 16px;
-          background: #403879;
-          border-radius: 13.5px;
-          @include fonts(800, 10px, 15px, $pink);
-          letter-spacing: 0.833333px;
         }
 
         & button{
