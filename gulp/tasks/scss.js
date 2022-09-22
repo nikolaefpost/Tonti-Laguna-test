@@ -19,7 +19,7 @@ export const scss = () => {
           overrideBrowsersList: ["last 3 versions"],
           cascade: true
       }))
-      .pipe(app.gulp.dest(app.path.build.css))
+      // .pipe(app.gulp.dest(app.path.build.css))
       .pipe(cleanCss())
       .pipe(rename({
           extname: ".min.css"
