@@ -1,19 +1,47 @@
+@import "fonts";
+
+@mixin fonts($font-weight, $font-size, $line-height, $color) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin display-flex($justify-content: center, $align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+body{
+  font-family: Poppins;
+  background: linear-gradient(180deg, #F5F5FA 0%, #F2DAD5 44.15%, #A1ABD6 100%);
+  width: 100vw;
+  height: 100vh;
+}
+
+header{
+
+}
+
+
 .content{
   background: red;
 
   & span{
-    color: blue;
+    @include fonts(700, 24px, 24px, blue)
   }
 }
 
-@media screen and (max-width: 768px){
-  span{
-    font-size: 26px;
-  }
-}
-
-@media screen and (max-width: 768px){
-  .content{
-    background: yellow;
-  }
-}
+//@media screen and (max-width: 768px){
+//  span{
+//    @include fonts(700, 24px, 24px, blue)
+//  }
+//}
+//
+//@media screen and (max-width: 768px){
+//  .content{
+//    background: yellow;
+//    @include display-flex;
+//  }
+//}

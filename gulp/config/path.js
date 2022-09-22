@@ -11,6 +11,7 @@ export const path = {
         js: `${buildFolder}/js/`,
         css: `${buildFolder}/css/`,
         html: `${buildFolder}/`,
+        fonts: `${buildFolder}/fonts/`,
         files: `${buildFolder}/files/`,
     },
     src: {

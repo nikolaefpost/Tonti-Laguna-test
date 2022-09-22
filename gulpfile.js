@@ -16,6 +16,7 @@ import {server} from "./gulp/tasks/server.js";
 import {scss} from "./gulp/tasks/scss.js";
 import {js} from "./gulp/tasks/js.js";
 import {assets} from "./gulp/tasks/assets.js"
+import {otfToTtf, fontsStyle, ttfToWoff} from "./gulp/tasks/fonts.js"
 
 function watcher(){
     gulp.watch(path.watch.files, copy)
@@ -25,7 +26,9 @@ function watcher(){
     gulp.watch(path.watch.pic, assets)
 }
 
-const mainTasks = gulp.parallel(copy, html, scss, js, assets)
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
+
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, assets))
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 
