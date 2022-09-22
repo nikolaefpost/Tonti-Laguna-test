@@ -222,24 +222,25 @@ main{
   }
 }
 
-.price{
+.price_left{
   animation-duration: 1s;
-  animation-name: slidein;
+  animation-name: slide_in;
 }
 
-@keyframes slidein {
+@keyframes slide_in {
   from {
     margin-left: 20%;
     opacity: 0;
-    width: 300%;
+    transform: scale(1.5)
   }
 
   to {
-    margin-left: 0%;
+    margin-left: 0;
     opacity: 1;
-    width: 100%;
+    transform: scale(1)
   }
 }
+
 
 @media screen and (max-width: 500px){
   body{
