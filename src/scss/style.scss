@@ -1,44 +1,364 @@
 @import "fonts";
+@import "_colors";
+@import "_mixins";
 
-@mixin fonts($font-weight, $font-size, $line-height, $color) {
-  font-weight: $font-weight;
-  font-size: $font-size;
-  line-height: $line-height;
-  color: $color;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Poppins;
 }
 
-@mixin display-flex($justify-content: center, $align-items: center) {
-  display: flex;
-  justify-content: $justify-content;
-  align-items: $align-items;
-}
 
 body{
-  font-family: Poppins;
-  background: linear-gradient(180deg, #F5F5FA 0%, #F2DAD5 44.15%, #A1ABD6 100%);
+  background: linear-gradient(180deg, $light-background 0%, $ambrosia_cake 44.15%, #A1ABD6 100%);
   width: 100vw;
   height: 100vh;
 }
 
-header{
+.choose_button{
+  @include fonts(500, 15px, 22px, #FFFFFF);
+  padding: 11px 55px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 
-}
-
-
-.content{
-  background: red;
-
-  & span{
-    @include fonts(700, 24px, 24px, blue)
+  &:hover{
+    background: #A847CC;
   }
 }
 
-//@media screen and (max-width: 768px){
-//  span{
-//    @include fonts(700, 24px, 24px, blue)
-//  }
-//}
-//
+.pink{
+  background: $pink;
+}
+
+.dark{
+  background: $prime_font;
+}
+
+.default_button{
+  @include fonts(500, 15px, 22px, #FFFFFF);
+  padding: 10px 30px;
+  background: $pink;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.white_button{
+  background: transparent;
+  color: #3B3472;
+}
+
+header{
+  width: 100%;
+  padding: 28px 50px 69px 53px;
+  @include display-flex(space-between);
+}
+
+//824
+
+main{
+  max-width: 937px;
+  margin: 0 auto;
+
+  & h1{
+    @include fonts(400, 40px, 60px, $prime_font);
+  }
+
+  & .select_period{
+    margin-top: 25px;
+    @include display-flex(space-between);
+    gap: 122px;
+
+    & p{
+      @include fonts(500, 18px, 27px, $second_font);
+    }
+
+    & div{
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.5);
+      @include display-flex;
+      gap: 6px;
+
+    }
+  }
+
+  & .card_block{
+    margin-top: 90px;
+    width: 100%;
+    height: 467px;
+    background: rgba(255, 255, 255, 0.64);
+    border-radius: 26px;
+    padding: 0 45px 20px 68px;
+    @include display-flex;
+    gap: 34px;
+
+    & .default_card{
+      width: 28%;
+      height: 100%;
+      padding: 40px 0 20px;
+      @include display-flex(space-between, flex-start);
+      flex-direction: column;
+
+      & .content{
+        & .price{
+
+          & span:first-child{
+            @include fonts(700, 36px, 46px, $prime_font);
+          }
+
+          & span{
+            @include fonts(500, 17px, 26px, $second_font);
+          }
+        }
+
+        & h2{
+          margin-top: 20px;
+          @include fonts(500, 28px, 42px, $prime_font);
+        }
+
+        & p{
+          @include fonts(500, 15px, 22px, $second_font);
+        }
+
+        & ul{
+
+          & li:first-child{
+            margin-top: 14px;
+          }
+
+          & li{
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+            margin-top: 8px;
+            @include fonts(500, 15px, 22px, $second_font);
+
+            &:after{
+              content: url("../assets/check.svg");
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+
+
+      }
+    }
+
+    & .popular_card{
+      position: relative;
+      width: 35%;
+      height: calc(100% + 26px);
+      margin-top: -26px;
+      background: #231D4F;
+      box-shadow: 0 42px 34px rgba(82, 67, 194, 0.295755);
+      border-radius: 26px;
+      padding: 66px 30px 20px;
+      @include display-flex(space-between, flex-start);
+      flex-direction: column;
+
+      & .content{
+
+        & .price{
+
+          & span:first-child{
+            @include fonts(700, 36px, 46px, #FFFFFF);
+          }
+
+          & span{
+            @include fonts(500, 17px, 26px, #FFFFFF);
+          }
+        }
+
+        & h2{
+          margin-top: 20px;
+          @include fonts(500, 28px, 42px, #FFFFFF);
+        }
+
+        & p{
+          @include fonts(500, 15px, 22px, #FFFFFF);
+        }
+
+        & ul{
+
+          & li:first-child{
+            margin-top: 14px;
+          }
+
+          & li{
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+            margin-top: 8px;
+            @include fonts(500, 15px, 22px, #FFFFFF);
+
+            &:after{
+              content: url("../assets/check_dark.svg");
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+
+
+      }
+
+      & .label{
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        padding: 6px 16px;
+        background: #403879;
+        border-radius: 13.5px;
+        @include fonts(800, 10px, 15px, $pink);
+        letter-spacing: 0.833333px;
+      }
+    }
+
+
+
+  }
+}
+
+@media screen and (max-width: 500px){
+  body{
+    height: auto;
+    padding: 0 16px;
+  }
+
+  header {
+    padding: 32px 8px 73px 11px ;
+
+    &  button{
+      display: none;
+    }
+  }
+
+  main{
+    padding-bottom: 64px;
+
+    & .select_period{
+      margin-top: 20px;
+      flex-direction: column;
+      gap: 20px;
+
+      & p{
+        @include fonts(500, 18px, 27px, $second_font);
+      }
+
+      & div{
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.5);
+        @include display-flex;
+        gap: 6px;
+
+      }
+    }
+
+    & .card_block{
+      margin-top: 32px;
+      height: auto;
+      padding: 8px;
+      flex-direction: column;
+      gap: 0;
+
+      & .default_card{
+        width: 100%;
+        height: auto;
+        padding: 32px 28px 16px;
+        flex-direction: column;
+        gap: 38px;
+
+        & button{
+          align-self: center;
+        }
+      }
+
+      & .popular_card{
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        padding: 20px;
+        @include display-flex(space-between, flex-start);
+        flex-direction: column;
+        gap: 25px;
+
+        & .content{
+
+          & .price{
+
+            & span:first-child{
+              @include fonts(700, 36px, 46px, #FFFFFF);
+            }
+
+            & span{
+              @include fonts(500, 17px, 26px, #FFFFFF);
+            }
+          }
+
+          & h2{
+            margin-top: 20px;
+            @include fonts(500, 28px, 42px, #FFFFFF);
+          }
+
+          & p{
+            @include fonts(500, 15px, 22px, #FFFFFF);
+          }
+
+          & ul{
+
+            & li:first-child{
+              margin-top: 14px;
+            }
+
+            & li{
+              list-style: none;
+              padding-left: 30px;
+              position: relative;
+              margin-top: 8px;
+              @include fonts(500, 15px, 22px, #FFFFFF);
+
+              &:after{
+                content: url("../assets/check_dark.svg");
+                position: absolute;
+                left: 0;
+              }
+            }
+          }
+
+
+        }
+
+        & .label{
+          align-self: center;
+          position: relative;
+          top: 0;
+          right: 0;
+          padding: 6px 16px;
+          background: #403879;
+          border-radius: 13.5px;
+          @include fonts(800, 10px, 15px, $pink);
+          letter-spacing: 0.833333px;
+        }
+
+        & button{
+          align-self: center;
+        }
+      }
+
+
+
+    }
+  }
+
+
+
+}
+
 //@media screen and (max-width: 768px){
 //  .content{
 //    background: yellow;
